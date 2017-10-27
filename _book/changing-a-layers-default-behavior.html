@@ -1,0 +1,363 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Changing a Layer’s Default Behavior · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="improving-animation-performance.html" />
+    
+    
+    <link rel="prev" href="advanced-animation-tricks.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="core-animation-basics.html">
+            
+                <a href="core-animation-basics.html">
+            
+                    
+                    Core Animation Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="setting-up-layer-objects.html">
+            
+                <a href="setting-up-layer-objects.html">
+            
+                    
+                    Setting Up Layer Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="animating-layer-content.html">
+            
+                <a href="animating-layer-content.html">
+            
+                    
+                    Animating Layer Content
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="building-a-layer-hierarchy.html">
+            
+                <a href="building-a-layer-hierarchy.html">
+            
+                    
+                    Building a Layer Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="advanced-animation-tricks.html">
+            
+                <a href="advanced-animation-tricks.html">
+            
+                    
+                    Advanced Animation Tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="changing-a-layers-default-behavior.html">
+            
+                <a href="changing-a-layers-default-behavior.html">
+            
+                    
+                    Changing a Layer’s Default Behavior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="improving-animation-performance.html">
+            
+                <a href="improving-animation-performance.html">
+            
+                    
+                    Improving Animation Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Changing a Layer’s Default Behavior</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pageTitle">Changing a Layer&#x2019;s Default Behavior </h1>
+<p>&#x9690;&#x58EB;&#x52A8;&#x753B;&#x901A;&#x8FC7;action&#x5BF9;&#x8C61;&#x5B8C;&#x6210;&#xFF0C;action&#x5BF9;&#x8C61;&#x9075;&#x5B88;CAAction&#x534F;&#x8BAE;&#xFF0C;&#x6240;&#x6709;CAAnimation&#x5BF9;&#x8C61;&#x90FD;&#x5B9E;&#x73B0;&#x4E86;CAAction&#x534F;&#x8BAE;&#xFF0C;&#x5C5E;&#x6027;&#x88AB;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;action&#x5BF9;&#x8C61;&#x88AB;&#x6267;&#x884C;</p>
+<h2 id="custom-action-objects-adopt-the-caaction-protocol">Custom Action Objects Adopt the CAAction Protocol</h2>
+<p>&#x521B;&#x5EFA;action&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x5B9E;&#x73B0;<code>CAAction</code>&#x534F;&#x8BAE;&#x7684;<code>runActionForKey:object:arguments:</code>&#x65B9;&#x6CD5;</p>
+<p>&#x5B9A;&#x4E49;action&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5236;&#x5B9A;action&#x5BF9;&#x8C61;&#x5982;&#x4F55;&#x88AB;&#x89E6;&#x53D1;&#x3002;&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;&#xFF1A;</p>
+<ul>
+<li>layer&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x88AB;&#x6539;&#x53D8;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#xFF0C;&#x5305;&#x62EC;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</li>
+<li><code>kCAOnOrderIn</code>&#xFF1A;layer&#x53D8;&#x5F97;&#x53EF;&#x89C6;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x5230;layer&#x5C42;&#x6B21;&#x4E2D;</li>
+<li><code>kCAOnOrderOut</code>&#xFF1A;layer&#x4ECE;&#x5C42;&#x6B21;&#x4E2D;&#x5220;&#x9664;</li>
+<li><code>kCATransition</code>&#xFF1A;layer&#x9A6C;&#x4E0A;&#x5F00;&#x59CB;transition&#x52A8;&#x753B;</li>
+</ul>
+<h2 id="action-objects-must-be-installed-on-a-layer-to-have-an-effect">Action Objects Must Be Installed On a Layer to Have an Effect</h2>
+<p>&#x5F53;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;layer&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>actionForKey:</code>&#x641C;&#x7D22;action&#x5BF9;&#x8C61;&#x6765;&#x6267;&#x884C;</p>
+<p>Core Animation&#x5BFB;&#x627E;action&#x5BF9;&#x8C61;&#x7684;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>layer&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x7684;<code>actionForLayer:forKey:</code>&#x65B9;&#x6CD5;<ul>
+<li>&#x8FD4;&#x56DE;action&#x5BF9;&#x8C61;</li>
+<li>&#x8FD4;&#x56DE;nil&#x641C;&#x7D22;&#x7EE7;&#x7EED;</li>
+<li>&#x8FD4;&#x56DE;NSNull&#x641C;&#x7D22;&#x7EE7;&#x7EED; </li>
+</ul>
+</li>
+<li>layer&#x5728;&#x5B83;&#x7684;<code>actions</code>&#x4E2D;&#x67E5;&#x627E;key</li>
+<li>&#x5728;layer&#x7684;style&#x5B57;&#x5178;&#x4E2D;&#x67E5;&#x627E;&#x5305;&#x542B;key&#x7684;&#x5B57;&#x5178;</li>
+<li><code>[layer defaultActionForKey:];</code></li>
+<li>layer&#x6267;&#x884C;&#x7531;Core Animation&#x5B9A;&#x4E49;&#x7684;&#x9690;&#x58EB;action</li>
+</ul>
+<p>&#x627E;&#x5230;action&#x4E4B;&#x540E;&#xFF0C;layer&#x8C03;&#x7528;action&#x7684;<code>runActionForKey:object:arguments:</code>&#x65B9;&#x6CD5;&#x6267;&#x884C;action</p>
+<p>&#x5728;&#x54EA;&#x91CC;&#x63D0;&#x4F9B;action&#x89C6;&#x60C5;&#x51B5;&#x800C;&#x5B9A;&#xFF1A;</p>
+<ul>
+<li>&#x7279;&#x5B9A;&#x60C5;&#x51B5;&#x4E0B;&#x6216;&#x8005;layer&#x5DF2;&#x7ECF;&#x6709;delegate&#x4E86;&#xFF0C;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x5E76;&#x5B9E;&#x73B0;<code>actionForLayer:forKey:</code></li>
+<li>&#x4E0D;&#x7528;&#x4EE3;&#x7406;&#x7684;layer&#xFF0C;&#x628A;action&#x6DFB;&#x52A0;&#x5230;actions&#x4E2D;</li>
+<li>&#x4E0E;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x6709;&#x5173;&#x7684;action&#xFF0C;&#x628A;action&#x653E;&#x5230;style&#x5B57;&#x5178;&#x91CC;</li>
+<li>&#x5BF9;layer&#x6765;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x884C;&#x4E3A;&#x7684;&#x8BDD;&#xFF0C;&#x5728;layer&#x7684;&#x5B50;&#x7C7B;&#x8986;&#x76D6;<code>defaultActionForKey:</code></li>
+</ul>
+<h2 id="disable-actions-temporarily-using-the-catransaction-class">Disable Actions Temporarily Using the CATransaction Class</h2>
+<pre><code>[CATransaction begin];
+[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+[aLayer removeFromSuperlayer];
+[CATransaction commit];
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="advanced-animation-tricks.html" class="navigation navigation-prev " aria-label="Previous page: Advanced Animation Tricks">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="improving-animation-performance.html" class="navigation navigation-next " aria-label="Next page: Improving Animation Performance">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Changing a Layer’s Default Behavior","level":"1.7","depth":1,"next":{"title":"Improving Animation Performance","level":"1.8","depth":1,"path":"improving-animation-performance.md","ref":"improving-animation-performance.md","articles":[]},"previous":{"title":"Advanced Animation Tricks","level":"1.6","depth":1,"path":"advanced-animation-tricks.md","ref":"advanced-animation-tricks.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"changing-a-layers-default-behavior.md","mtime":"2017-10-27T09:51:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-27T04:00:05.684Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

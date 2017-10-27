@@ -1,0 +1,354 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Core Animation Basics · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="setting-up-layer-objects.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="core-animation-basics.html">
+            
+                <a href="core-animation-basics.html">
+            
+                    
+                    Core Animation Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="setting-up-layer-objects.html">
+            
+                <a href="setting-up-layer-objects.html">
+            
+                    
+                    Setting Up Layer Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="animating-layer-content.html">
+            
+                <a href="animating-layer-content.html">
+            
+                    
+                    Animating Layer Content
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="building-a-layer-hierarchy.html">
+            
+                <a href="building-a-layer-hierarchy.html">
+            
+                    
+                    Building a Layer Hierarchy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="advanced-animation-tricks.html">
+            
+                <a href="advanced-animation-tricks.html">
+            
+                    
+                    Advanced Animation Tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="changing-a-layers-default-behavior.html">
+            
+                <a href="changing-a-layers-default-behavior.html">
+            
+                    
+                    Changing a Layer’s Default Behavior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="improving-animation-performance.html">
+            
+                <a href="improving-animation-performance.html">
+            
+                    
+                    Improving Animation Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Core Animation Basics</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pageTitle">Core Animation Basics </h1>
+<p>Core Animation&#x5728;&#x56FE;&#x5F62;&#x786C;&#x4EF6;&#x4E0A;&#x7BA1;&#x7406;&#x53EF;&#x89C6;&#x5185;&#x5BB9;&#x3002;&#x901A;&#x8FC7;&#x6539;&#x53D8;&#x5C5E;&#x6027;&#x6765;&#x5B9E;&#x73B0;&#x52A8;&#x753B;</p>
+<h2 id="layers-provide-the-basis-for-drawing-and-animations">Layers Provide the Basis for Drawing and Animations</h2>
+<p>layer&#x662F;3D&#x7A7A;&#x95F4;&#x7684;2D&#x8868;&#x793A;&#xFF0C;&#x52A8;&#x753B;&#x7684;&#x6838;&#x5FC3;&#x5185;&#x5BB9;&#xFF0C;&#x5B58;&#x50A8;&#x4F4D;&#x56FE;&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF0C;&#x662F;view&#x7684;model</p>
+<h4 id="the-layer-based-drawing-model">The Layer-Based Drawing Model</h4>
+<p>&#x5C5E;&#x6027;&#x6539;&#x53D8;&#x89E6;&#x53D1;&#x52A8;&#x753B;&#x65F6;&#xFF0C;Core Animation&#x5C06;&#x4F4D;&#x56FE;&#x548C;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x56FE;&#x5F62;&#x786C;&#x4EF6;&#x505A;&#x6E32;&#x67D3;</p>
+<p>&#x57FA;&#x4E8E;view&#x7684;&#x56FE;&#x5F62;&#x4F1A;&#x5229;&#x7528;CPU&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;<code>drawRect:</code>&#xFF0C;&#x5F88;&#x8017;&#x65F6;</p>
+<h4 id="layer-based-animations">Layer-Based Animations</h4>
+<p>&#x628A;layer&#x7684;&#x6570;&#x636E;&#x548C;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x4E0E;&#x89C6;&#x89C9;&#x8868;&#x73B0;&#x5206;&#x79BB;&#xFF0C;&#x6709;&#x5229;&#x4E8E;&#x628A;Core Animation&#x63D2;&#x5165;&#x5230;&#x4E2D;&#x95F4;&#x5E76;&#x505A;&#x52A8;&#x753B;</p>
+<h2 id="layer-objects-define-their-own-geometry">Layer Objects Define Their Own Geometry</h2>
+<h4 id="layers-use-two-types-of-coordinate-systems">Layers Use Two Types of Coordinate Systems</h4>
+<p>point-based coordinate systems &#x548C; unit coordinate systems</p>
+<p>iOS app&#x4E2D;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>geometryFlipped</code></p>
+<h4 id="anchor-points-affect-geometric-manipulations">Anchor Points Affect Geometric Manipulations</h4>
+<p>&#x6539;&#x53D8;anchor&#x5BF9;position&#x548C;transform&#x7684;&#x5F71;&#x54CD;</p>
+<h4 id="layers-can-be-manipulated-in-three-dimensions">Layers Can Be Manipulated in Three Dimensions</h4>
+<p><code>transform</code>&#x6539;&#x53D8;layer&#x548C;&#x4ED6;&#x7684;sublayers&#xFF0C; <code>sublayerTransform</code>&#x591A;&#x7528;&#x4E8E;&#x900F;&#x89C6;</p>
+<p>Core Animation&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x751F;&#x6210;&#x53D8;&#x5316;&#x77E9;&#x9635;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x652F;&#x6301;&#x901A;&#x8FC7;KVC&#x6539;&#x53D8;&#x77E9;&#x9635;</p>
+<h2 id="layer-trees-reflect-different-aspects-of-the-animation-state">Layer Trees Reflect Different Aspects of the Animation State</h2>
+<p>Core Animation&#x7BA1;&#x7406;&#x7740;&#x4E09;&#x79CD;layer&#x5BF9;&#x8C61;</p>
+<ul>
+<li>model layer tree&#xFF08;layer tree&#xFF09;&#x4FDD;&#x5B58;&#x52A8;&#x753B;&#x7684;&#x76EE;&#x6807;&#x503C;</li>
+<li>presentation tree&#xFF1A;&#x8868;&#x793A;&#x52A8;&#x753B;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x503C;</li>
+<li>render tree&#xFF1A;Core Animation&#x79C1;&#x6709;</li>
+</ul>
+<p><img src="assets/impor1t.png" alt=""></p>
+<h2 id="the-relationship-between-layers-and-views">The Relationship Between Layers and Views</h2>
+<p>layer&#x4E0D;&#x80FD;&#x63A5;&#x6536;&#x4E8B;&#x4EF6;&#x3001;&#x7ED8;&#x5236;&#x5185;&#x5BB9;&#x3001;&#x53C2;&#x4E0E;&#x54CD;&#x5E94;&#x94FE;</p>
+<p>iOS&#x4E2D;layer&#x548C;view&#x4E00;&#x5BF9;&#x4E00;</p>
+<p>iOS&#x91CC;&#x9762;&#x7684;view&#x9ED8;&#x8BA4;&#x662F;layer-backed view&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x6837;&#x7684;view&#xFF0C;&#x5EFA;&#x8BAE;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;view&#x800C;&#x4E0D;&#x662F;layer</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="setting-up-layer-objects.html" class="navigation navigation-next " aria-label="Next page: Setting Up Layer Objects">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Core Animation Basics","level":"1.2","depth":1,"next":{"title":"Setting Up Layer Objects","level":"1.3","depth":1,"path":"setting-up-layer-objects.md","ref":"setting-up-layer-objects.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"core-animation-basics.md","mtime":"2017-10-26T23:05:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-27T04:00:05.684Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
