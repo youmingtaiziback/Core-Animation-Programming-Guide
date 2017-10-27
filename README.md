@@ -1,4 +1,4 @@
-# About Core Animation {#pageTitle}
+# About Core Animation1 {#pageTitle}
 
 Core Animation绘制每一帧，你只需要配置参数并启动动画。Core Animation在图形硬件上加速渲染，减轻CPU负担
 
